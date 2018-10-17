@@ -1,0 +1,9 @@
+<header class="navbar bg-grey">
+  <a routerLink="/home">
+    <img src="https://d3ki9tyy5l5ruj.cloudfront.net/obj/3ac85a538c3fc5bb08d0206ede04ae8aa13c20b2/inapp__logo_color_ondark_horizontal.svg" alt="Logo" class="logo-image"/>
+  </a>
+</header>
+<ng4-loading-spinner [timeout]="10000" [loadingText]="'Please wait...'"> </ng4-loading-spinner>
+<ng-container>
+  <router-outlet></router-outlet>
+</ng-container>

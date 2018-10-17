@@ -1,0 +1,10 @@
+<ng-container *ngFor="let data_object of response_data">
+  <div class="text-center">
+    <div *ngIf="data_object.resource_type==='section'; else tasks">
+      <h3 class="d-inline-block">Tasks in &#8211;</h3><h5 class="d-inline-block ml-2">{{data_object.name}}</h5>
+    </div>
+    <ng-template #tasks>
+      <div>&#8211; {{data_object.name}} ({{data_object.id}})</div>
+    </ng-template>
+  </div>
+</ng-container>

@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-sm-10 offset-sm-1">
+    <div *ngIf="!is_authenticated" class="row">
+      <h1 class="text-center">You are not an authenticated User. Please enter you client ID to authenticate yourself</h1>
+      <div class="input-group col-sm-10 offset-sm-1">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="client-id">Client ID</span>
+        </div>
+        <input type="text" class="form-control" aria-describedby="client-id" [(ngModel)]="client_id">
+        <button (click)=authenticateUser(client_id) class="btn btn-danger btn-lg btn-block my-4" [disabled]="!client_id">Authenticate</button>
+      </div>
+    </div>
+    <div class="col-sm-10 offset-sm-1" *ngIf="is_authenticated">
+      <div class="input-group my-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="project-id">Project ID</span>
+        </div>
+        <input type="text" class="form-control" aria-describedby="project-id" [(ngModel)]="entered_project_id">
+        <button (click)=getProjectTasks(entered_project_id) class="btn btn-danger btn-lg btn-block my-4" [disabled]="!entered_project_id">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>
